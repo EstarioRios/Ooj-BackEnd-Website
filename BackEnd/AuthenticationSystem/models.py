@@ -13,7 +13,7 @@ class CustomUserManager(BaseUserManager):
         self,
         first_name=None,
         last_name=None,
-        user_type="customer",
+        user_type="student",
         password=None,
         id_code=None,
         active_mode=True,
