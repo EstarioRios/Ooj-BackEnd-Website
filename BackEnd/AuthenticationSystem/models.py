@@ -139,6 +139,7 @@ class Score(models.Model):
         max_length=100,
         blank=False,
         null=False,
+        unique=True,
     )
     value = models.DecimalField(
         decimal_places=2,
