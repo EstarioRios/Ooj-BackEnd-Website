@@ -145,3 +145,82 @@ def edit_score(request):
         },
         status=status.HTTP_200_OK,
     )
+
+
+@permission_classes([IsAuthenticated])
+@api_view(["GET"])
+def show_student_scores(request):
+    user, _ = JWTAuthentication().authenticate(request)
+
+    if user.user_type == "student":
+        target_student = user
+
+    elif (user.user_type == "teacher") or (user.user_type == "admin"):
+        student_id_code = request.query_params.get("student_id_code")
+        if not student_id_code:
+            return Response(
+                {"error": "student_id_code is required for teacher access."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            target_student = CustomUser.objects.get(id_code=student_id_code)
+            if target_student.user_type != "student":
+                return Response(
+                    {"error": "Provided user is not a student."},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+        except CustomUser.DoesNotExist:
+            return Response(
+                {"error": "Student not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+    else:
+        return Response(
+            {"error": "You're not allowed to view student scores."},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+
+    scores = Score.objects.filter(student=target_student)
+    serialized_scores = ScoreSerializer(scores, many=True).data
+
+    return Response(
+        {
+            "student": CustomUserDetailSerializer(target_student).data,
+            "scores": serialized_scores,
+        },
+        status=status.HTTP_200_OK,
+    )
+
+
+@permission_classes([IsAuthenticated])
+@api_view(["GET"])
+def show_student_class(request):
+    user, _ = JWTAuthentication().authenticate(request)
+
+    ed_class_title = request.query_params.get("ed_class_title")
+    if not ed_class_title:
+        return Response(
+            {"error": "class title is required"}, status=status.HTTP_400_BAD_REQUEST
+        )
+
+    try:
+        target_ed_class = Ed_Class.objects.get(title=ed_class_title)
+    except Ed_Class.DoesNotExist:
+        return Response({"error": "Class not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    if user.user_type not in ("teacher", "admin"):
+        return Response(
+            {"error": "You are not allowed"}, status=status.HTTP_403_FORBIDDEN
+        )
+
+    students = target_ed_class.students.all()
+
+    if not students.exists():
+        return Response(
+            {"error": "There are no students in this class"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    serialized_students = CustomUserListSerializer(students, many=True).data
+
+    return Response({"students": serialized_students}, status=status.HTTP_200_OK)
