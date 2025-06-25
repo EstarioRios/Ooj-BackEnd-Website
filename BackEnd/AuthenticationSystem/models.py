@@ -124,7 +124,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Ed_Class(models.Model):
-    title = models.CharField(max_length=100, null=False, blank=False)
+    title = models.CharField(
+        max_length=100,
+        null=False,
+        blank=False,
+        unique=True,
+    )
     teacher = models.ForeignKey(
         to=CustomUser,
         on_delete=models.CASCADE,
