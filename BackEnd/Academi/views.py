@@ -266,7 +266,7 @@ def remove_student(request):
 
 
 @permission_classes([IsAuthenticated])
-@api_view([""])
+@api_view(["PATCH"])
 def change_teacher(request):
     user, _ = JWTAuthentication().authenticate(request)
 
@@ -325,3 +325,34 @@ def change_teacher(request):
         },
         status=status.HTTP_200_OK,
     )
+
+
+@permission_classes([IsAuthenticated])
+@api_view("GET")
+def show_teachers(request):
+    user, _ = JWTAuthentication().authenticate(request)
+
+    if user.user_type != "admin":
+        return Response(
+            {"error": "you are not allowed"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+    try:
+        teachers = CustomUser.objects.filter(user_type="teacher")
+    except CustomUser.DoesNotExist:
+        return Response(
+            {"error": "there is no teacher"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    serialized_teachers = CustomUserListSerializer(teachers, many=True)
+
+    return Response(
+        {"teachers": serialized_teachers.data},
+        status=status.HTTP_200_OK,
+    )
+
+
+@permission_classes([IsAuthenticated])
+@api_view(["GET"])
+def show_student_profile(request):
+    pass
