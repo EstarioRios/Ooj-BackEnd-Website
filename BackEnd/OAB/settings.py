@@ -90,13 +90,9 @@ WSGI_APPLICATION = "OAB.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_db_name',         # نام دیتابیسی که در CPanel ساختی
-        'USER': 'your_db_user',         # یوزری که دسترسی به اون دیتابیس داره
-        'PASSWORD': 'your_db_password', # رمز اون یوزر
-        'HOST': 'your_db_host',         # معمولاً 'localhost' یا IP دیتابیس در هاست
-        'PORT': '5432',                 # پورت پیش‌فرض PostgreSQL
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 

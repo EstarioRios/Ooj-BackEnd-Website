@@ -329,7 +329,7 @@ def change_teacher(request):
 
 
 @permission_classes([IsAuthenticated])
-@api_view("GET")
+@api_view(["GET"])
 def show_teachers(request):
     user, _ = JWTAuthentication().authenticate(request)
 
