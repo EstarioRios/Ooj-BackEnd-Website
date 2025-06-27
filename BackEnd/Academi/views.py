@@ -10,6 +10,7 @@ from AuthenticationSystem.serializers import (
     TeacherCreateSerializer,
     CustomUserListSerializer,
     CustomUserDetailSerializer,
+    CusomUserDetailSerializerTeacher,
 )
 
 from rest_framework import status
@@ -355,4 +356,112 @@ def show_teachers(request):
 @permission_classes([IsAuthenticated])
 @api_view(["GET"])
 def show_student_profile(request):
-    pass
+    user, _ = JWTAuthentication().authenticate(request)
+    if (user.user_type == "teacher") or (user.user_type == "admin"):
+        target_user_id_code = request.query_params.get("id_code")
+        if not target_user_id_code:
+            return Response(
+                {"error": "'id_code' is required"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+    try:
+        target_user = CustomUser.objects.get(id_code=target_user_id_code)
+    except CustomUser.DoesNotExist:
+        return Response(
+            {"error": "user not found"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    if user.user_type == "student":
+        target_user = user
+
+    return Response(
+        {
+            "message": "successful",
+            "user_data": CustomUserDetailSerializer(user).data,
+        },
+        status=status.HTTP_200_OK,
+    )
+
+
+@permission_classes([IsAuthenticated])
+@api_view(["GET"])
+def show_teacher_profile(request):
+    user, _ = JWTAuthentication().authenticate(request)
+
+    if user.user_type not in ["admin", "teacher"]:
+        return Response(
+            {"error": "you are not allowed"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+
+    if user.user_type == "admin":
+        target_user_id_code = request.query_params("target_user_id_code")
+        if not target_user_id_code:
+            return Response(
+                {"error": "'target_user_id_code' is required"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            target_user = CustomUser.objects.get(id_code=target_user_id_code)
+        except CustomUser.DoesNotExist:
+            return Response(
+                {"error", "user not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+    if user.user_type == "teacher":
+        target_user = user
+
+    return Response(
+        {
+            "message": "successful",
+            "user": CusomUserDetailSerializerTeacher(target_user).data,
+        },
+        status=status.HTTP_200_OK,
+    )
+
+
+@permission_classes([IsAuthenticated])
+@api_view(["PATCH"])
+def change_student_class(request):
+    user, _ = JWTAuthentication().authenticate(request)
+    if user.user_type != "admin":
+        return Response(
+            {"error": "you are not allowed"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+
+    target_student_id_code = request.data.get("target_student_id_code")
+    if not target_student_id_code:
+        return Response(
+            {"error": "'target_student_id_code' is required"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    try:
+        target_student = CustomUser.objects.get(id_code=target_student_id_code)
+    except CustomUser.DoesNotExist:
+        return Response(
+            {"error": "'target_user' not found"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    new_ed_class_title = request.data.get("new_class_title")
+    if not new_ed_class_title:
+        return Response(
+            {"error": "'new_ed_class_title' is required"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    try:
+        new_ed_class = Ed_Class.objects.get(title=new_ed_class_title)
+    except Ed_Class.DoesNotExist:
+        return Response(
+            {"error": "'new_class' not found"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    target_student.ed_class = new_ed_class
+    target_student.save()
+    return Response(
+        {"message": "successful"},
+        status=status.HTTP_200_OK,
+    )

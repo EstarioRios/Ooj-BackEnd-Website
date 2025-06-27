@@ -17,6 +17,7 @@ class CustomUserManager(BaseUserManager):
         password=None,
         id_code=None,
         active_mode=True,
+        ed_class=None,
         **extra_fields,
     ):
         if not first_name:
@@ -27,6 +28,8 @@ class CustomUserManager(BaseUserManager):
             raise ValueError("The 'id_code' must be set")
         elif not password:
             raise ValueError("The 'password' must be set")
+        elif not ed_class:
+            raise ValueError("The 'ed_class' must be set")
 
         if self.model.objects.filter(id_code=id_code).exists():
             raise ValueError(f"The 'id_code' {id_code} is already taken.")
@@ -93,8 +96,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         to="Ed_Class",
         on_delete=models.CASCADE,
         related_name="students",
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
     )
     active_mode = models.BooleanField(default=True)
     groups = models.ManyToManyField(
@@ -144,7 +147,6 @@ class Score(models.Model):
         max_length=100,
         blank=False,
         null=False,
-        unique=True,
     )
     value = models.DecimalField(
         decimal_places=2,

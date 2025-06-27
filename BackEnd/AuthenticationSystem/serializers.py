@@ -42,8 +42,23 @@ class CustomUserDetailSerializer(serializers.ModelSerializer):
         ]
 
 
+class CusomUserDetailSerializerTeacher(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = [
+            "active_mode",
+            "id_code",
+            "user_type",
+            "last_name",
+            "first_name",
+            "id",
+            "classes",
+        ]
+
+
 # ---------- CREATE STUDENT ----------
 class StudentCreateSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = CustomUser
         fields = ["first_name", "last_name", "id_code", "password", "ed_class"]

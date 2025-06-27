@@ -6,7 +6,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from .models import CustomUser
+from .models import CustomUser, Ed_Class
 from .serializers import CustomUserDetailSerializer
 
 
@@ -69,11 +69,27 @@ def signup(request):
                 last_name=user_last_name,
             )
         elif user_user_type == "student":
+
+            student_class_title = request.data.get("student_class")
+            if not student_class_title:
+                return Response(
+                    {"error": "'student_class is requirement'"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            try:
+                student_class = Ed_Class.objects.get(title=student_class_title)
+            except Ed_Class.DoesNotExist:
+                return Response(
+                    {"error": "'student_class' not found"},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
+
             new_user = CustomUser.objects.create_student(
                 id_code=user_id_code,
                 password=user_password,
                 first_name=user_first_name,
                 last_name=user_last_name,
+                ed_class=student_class,
             )
         else:
             return Response(
