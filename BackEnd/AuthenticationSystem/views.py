@@ -5,6 +5,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
+from rest_framework.permissions import AllowAny
 
 from .models import CustomUser, Ed_Class
 from .serializers import CustomUserDetailSerializer
@@ -36,7 +37,14 @@ def choose_dashboard(user, tokens, msg="Login successful"):
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def signup(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
     if user.user_type != "admin":
         return Response(
             {"error": "You're not allowed"}, status=status.HTTP_403_FORBIDDEN
@@ -129,9 +137,21 @@ def manual_login(request):
 
 # Login view: prefer JWT, fallback to manual login
 @api_view(["POST"])
+@permission_classes([AllowAny])
 def login(request):
     try:
-        user, _ = JWTAuthentication().authenticate(request)
+        user_auth = JWTAuthentication().authenticate(request)
+        if not user_auth:
+            return manual_login(request)
+
+        if user_auth is not None:
+            user, _ = user_auth
+        else:
+            return Response(
+                {"error": "something is wrong"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         return choose_dashboard(user, tokens=get_tokens_for_user(user))
     except AuthenticationFailed:
         return manual_login(request)

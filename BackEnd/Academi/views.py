@@ -20,10 +20,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["POST"])
+@permission_classes([IsAuthenticated])
 def sub_score(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
+
     if user.user_type != "teacher":
         return Response(
             {"error": "You're not allowed"}, status=status.HTTP_403_FORBIDDEN
@@ -81,10 +89,17 @@ def sub_score(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["PATCH"])
+@permission_classes([IsAuthenticated])
 def edit_score(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
     if user.user_type != "teacher":
         return Response(
             {"error": "You're not allowed"}, status=status.HTTP_403_FORBIDDEN
@@ -148,10 +163,17 @@ def edit_score(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def show_student_scores(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
 
     if user.user_type == "student":
         target_student = user
@@ -193,10 +215,17 @@ def show_student_scores(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def show_student_class(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
 
     ed_class_title = request.query_params.get("ed_class_title")
     if not ed_class_title:
@@ -227,10 +256,17 @@ def show_student_class(request):
     return Response({"students": serialized_students}, status=status.HTTP_200_OK)
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
 def remove_student(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
     if user.user_type != "admin":
         return Response(
             {"error": "You are not allowed"},
@@ -266,10 +302,17 @@ def remove_student(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["PATCH"])
+@permission_classes([IsAuthenticated])
 def change_teacher(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
 
     if user.user_type != "admin":
         return Response(
@@ -328,10 +371,17 @@ def change_teacher(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def show_teachers(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
 
     if user.user_type != "admin":
         return Response(
@@ -353,10 +403,17 @@ def show_teachers(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def show_student_profile(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
     if (user.user_type == "teacher") or (user.user_type == "admin"):
         target_user_id_code = request.query_params.get("id_code")
         if not target_user_id_code:
@@ -385,10 +442,17 @@ def show_student_profile(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def show_teacher_profile(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
 
     if user.user_type not in ["admin", "teacher"]:
         return Response(
@@ -422,10 +486,17 @@ def show_teacher_profile(request):
     )
 
 
-@permission_classes([IsAuthenticated])
 @api_view(["PATCH"])
+@permission_classes([IsAuthenticated])
 def change_student_class(request):
-    user, _ = JWTAuthentication().authenticate(request)
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    user, _ = user_auth
     if user.user_type != "admin":
         return Response(
             {"error": "you are not allowed"},
