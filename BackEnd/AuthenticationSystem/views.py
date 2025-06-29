@@ -22,15 +22,25 @@ def get_tokens_for_user(user):
 
 # Dashboard Response Generator
 def choose_dashboard(user, tokens, msg="Login successful"):
-    return Response(
-        {
-            "user_type": user.user_type,
-            "success": msg,
-            "tokens": tokens,
-            "user": CustomUserDetailSerializer(user).data,
-        },
-        status=status.HTTP_200_OK,
-    )
+    if not tokens:
+        return Response(
+            {
+                "user_type": user.user_type,
+                "success": msg,
+                "user": CustomUserDetailSerializer(user).data,
+            },
+            status=status.HTTP_200_OK,
+        )
+    else:
+        return Response(
+            {
+                "user_type": user.user_type,
+                "success": msg,
+                "tokens": tokens,
+                "user": CustomUserDetailSerializer(user).data,
+            },
+            status=status.HTTP_200_OK,
+        )
 
 
 # Admin-only signup view
@@ -139,23 +149,16 @@ def manual_login(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def login(request):
-    
+
     try:
-        print("HEADERS:", request.headers)
 
         user_auth = JWTAuthentication().authenticate(request)
-        print("AUTH RESULT:", user_auth)
         if not user_auth:
             return manual_login(request)
 
-        if user_auth is not None:
-            user, _ = user_auth
         else:
-            return Response(
-                {"error": "something is wrong"},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
+            user, _ = user_auth
+            return choose_dashboard(user, tokens=None)
 
-        return choose_dashboard(user, tokens=get_tokens_for_user(user))
     except AuthenticationFailed:
         return manual_login(request)
