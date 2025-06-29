@@ -9,6 +9,9 @@ from django.contrib.auth.models import (
 
 
 class CustomUserManager(BaseUserManager):
+    def get_by_natural_key(self, id_code):
+        return self.get(id_code=id_code)
+
     def create_student(
         self,
         first_name=None,
@@ -82,6 +85,7 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+
     USER_TYPES = [
         ("student", "Student"),
         ("teacher", "Teacher"),
@@ -117,9 +121,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         related_query_name="customuser",
     )
 
-    objects = CustomUserManager()
+    def get_by_natural_key(self, id_code):
+        return self.get(id_code=id_code)
 
-    USERNAME_FIELD = "id_code"
+    objects = CustomUserManager()
+    USERNAME_FIELD = "id"
     REQUIRED_FIELDS = ["first_name", "last_name"]
 
     def __str__(self):

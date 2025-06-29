@@ -139,8 +139,12 @@ def manual_login(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def login(request):
+    
     try:
+        print("HEADERS:", request.headers)
+
         user_auth = JWTAuthentication().authenticate(request)
+        print("AUTH RESULT:", user_auth)
         if not user_auth:
             return manual_login(request)
 
