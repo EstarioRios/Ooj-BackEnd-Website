@@ -7,7 +7,8 @@ urlpatterns = [
     # Request body (if JWT not used):
     # {
     #   "id_code": 123456,
-    #   "password": "your_password"
+    #   "password": "your_password",
+    #   "remember":"True ro False" 
     # }
     # Response (200 OK):
     # {

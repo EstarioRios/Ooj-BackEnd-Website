@@ -21,7 +21,8 @@ def get_tokens_for_user(user):
 
 
 # Dashboard Response Generator
-def choose_dashboard(user, tokens, msg="Login successful"):
+def choose_dashboard(user, tokens, msg="Login successful",remember):
+
     if not tokens:
         return Response(
             {
@@ -32,11 +33,21 @@ def choose_dashboard(user, tokens, msg="Login successful"):
             status=status.HTTP_200_OK,
         )
     else:
-        return Response(
+        if remember == True:
+            return Response(
+                {
+                    "user_type": user.user_type,
+                    "success": msg,
+                    "tokens": tokens,
+                    "user": CustomUserDetailSerializer(user).data,
+                },
+                status=status.HTTP_200_OK,
+            )
+        else:
+            return Response(
             {
                 "user_type": user.user_type,
                 "success": msg,
-                "tokens": tokens,
                 "user": CustomUserDetailSerializer(user).data,
             },
             status=status.HTTP_200_OK,
@@ -114,16 +125,14 @@ def signup(request):
                 {"error": "Invalid user_type. Must be 'student' or 'teacher'."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-
-        tokens = get_tokens_for_user(new_user)
-        return choose_dashboard(new_user, tokens, msg="User created successfully")
+        return Response({"message":"user created successfuly", "user":CustomUserDetailSerializer(new_user).data,}, status=status.HTTP_201_CREATED,)
 
     except ValueError as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 # Manual login if JWT not present
-def manual_login(request):
+def manual_login(request, remember):
     user_id_code = request.data.get("id_code")
     user_password = request.data.get("password")
 
@@ -136,7 +145,7 @@ def manual_login(request):
     try:
         user = CustomUser.objects.get(id_code=user_id_code)
         if user.check_password(user_password):
-            return choose_dashboard(user, tokens=get_tokens_for_user(user))
+            return choose_dashboard(user, tokens=get_tokens_for_user(user), remember=remember)
         else:
             return Response(
                 {"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED
@@ -149,16 +158,19 @@ def manual_login(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def login(request):
+    remember = request.data.get("remember")
+    if not remember:
+        remember = False
 
     try:
 
         user_auth = JWTAuthentication().authenticate(request)
         if not user_auth:
-            return manual_login(request)
+            return manual_login(request, remember=remember)
 
         else:
             user, _ = user_auth
-            return choose_dashboard(user, tokens=None)
+            return choose_dashboard(user, tokens=None, remember=False)
 
     except AuthenticationFailed:
-        return manual_login(request)
+        return manual_login(request, remember=remember)
