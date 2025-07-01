@@ -10,6 +10,7 @@ from .views import (
     show_student_profile,
     show_teacher_profile,
     change_student_class,
+    remove_teacher,
 )
 
 urlpatterns = [
@@ -46,6 +47,10 @@ urlpatterns = [
     # Teachers: see their own profile
     # Admins: must pass ?target_user_id_code
     path("teacher/profile/", show_teacher_profile, name="teacher_profile"),
+    # DELETE /api/teacher/remove/
+    # Admin only
+    # Body: {"teacher_id_code":str("techer_id_code")}
+    path("teacher/remove/", remove_teacher, name="remove_teacher"),
     # PATCH /api/student/change-class/
     # Admin only
     # Body: { "target_student_id_code": int, "new_class_title": str }

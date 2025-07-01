@@ -371,6 +371,36 @@ def change_teacher(request):
     )
 
 
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def remove_teacher(request):
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    user, _ = user_auth
+    if user.user_type != "admin":
+        return Response(
+            {"error": "you are not allowed"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+    target_teacher_id_code = request.query_params.get("teacher_id_code")
+    try:
+        target_teacher = CustomUser.objects.get(id_code=target_teacher_id_code)
+    except CustomUser.DoesNotExist:
+        return Response(
+            {"error": "teacher not found"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    CustomUser.objects.delete(target_teacher)
+    return Response(
+        {"message": "teacher deleted successfully"},
+        status=status.HTTP_200_OK,
+    )
+
+
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def show_teachers(request):
