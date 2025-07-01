@@ -21,10 +21,7 @@ def get_tokens_for_user(user):
 
 
 # Dashboard Response Generator
-def choose_dashboard(user, tokens, msg="Login successful", *remember):
-    if not remember:
-        remember = False
-
+def choose_dashboard(user, tokens, msg="Login successful", remember=False):
     if not tokens:
         return Response(
             {
