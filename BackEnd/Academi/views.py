@@ -281,7 +281,10 @@ def remove_student(request):
         )
 
     try:
-        target_user = CustomUser.objects.get(id_code=target_user_id_code)
+        target_user = CustomUser.objects.filter(
+            id_code=target_user_id_code, user_type="student"
+        )
+
     except CustomUser.DoesNotExist:
         return Response(
             {"error": "Target user not found"},
@@ -388,7 +391,10 @@ def remove_teacher(request):
         )
     target_teacher_id_code = request.query_params.get("teacher_id_code")
     try:
-        target_teacher = CustomUser.objects.get(id_code=target_teacher_id_code)
+        target_teacher = CustomUser.objects.filter(
+            id_code=target_teacher_id_code, user_type="teacher"
+        )
+
     except CustomUser.DoesNotExist:
         return Response(
             {"error": "teacher not found"},
