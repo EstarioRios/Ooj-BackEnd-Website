@@ -21,7 +21,9 @@ def get_tokens_for_user(user):
 
 
 # Dashboard Response Generator
-def choose_dashboard(user, tokens, msg="Login successful",remember):
+def choose_dashboard(user, tokens, msg="Login successful", *remember):
+    if not remember:
+        remember = False
 
     if not tokens:
         return Response(
@@ -45,13 +47,13 @@ def choose_dashboard(user, tokens, msg="Login successful",remember):
             )
         else:
             return Response(
-            {
-                "user_type": user.user_type,
-                "success": msg,
-                "user": CustomUserDetailSerializer(user).data,
-            },
-            status=status.HTTP_200_OK,
-        )
+                {
+                    "user_type": user.user_type,
+                    "success": msg,
+                    "user": CustomUserDetailSerializer(user).data,
+                },
+                status=status.HTTP_200_OK,
+            )
 
 
 # Admin-only signup view
@@ -125,7 +127,13 @@ def signup(request):
                 {"error": "Invalid user_type. Must be 'student' or 'teacher'."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        return Response({"message":"user created successfuly", "user":CustomUserDetailSerializer(new_user).data,}, status=status.HTTP_201_CREATED,)
+        return Response(
+            {
+                "message": "user created successfuly",
+                "user": CustomUserDetailSerializer(new_user).data,
+            },
+            status=status.HTTP_201_CREATED,
+        )
 
     except ValueError as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -145,7 +153,9 @@ def manual_login(request, remember):
     try:
         user = CustomUser.objects.get(id_code=user_id_code)
         if user.check_password(user_password):
-            return choose_dashboard(user, tokens=get_tokens_for_user(user), remember=remember)
+            return choose_dashboard(
+                user, tokens=get_tokens_for_user(user), remember=remember
+            )
         else:
             return Response(
                 {"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED
