@@ -281,14 +281,18 @@ def remove_student(request):
         )
 
     try:
-        target_user = CustomUser.objects.filter(
-            id_code=target_user_id_code, user_type="student"
-        )
+
+        target_user = CustomUser.objects.get(id_code=target_user_id_code)
 
     except CustomUser.DoesNotExist:
         return Response(
             {"error": "Target user not found"},
             status=status.HTTP_404_NOT_FOUND,
+        )
+    if target_user.user_type != "student":
+        return Response(
+            {"error": "your target user is not 'student'"},
+            status=status.HTTP_400_BAD_REQUEST,
         )
 
     if target_user.user_type != "student":
@@ -391,16 +395,19 @@ def remove_teacher(request):
         )
     target_teacher_id_code = request.query_params.get("teacher_id_code")
     try:
-        target_teacher = CustomUser.objects.filter(
-            id_code=target_teacher_id_code, user_type="teacher"
-        )
+        target_teacher = CustomUser.objects.get(id_code=target_teacher_id_code)
 
     except CustomUser.DoesNotExist:
         return Response(
             {"error": "teacher not found"},
             status=status.HTTP_404_NOT_FOUND,
         )
-    CustomUser.objects.delete(target_teacher)
+    if target_teacher.user_type != "teacher":
+        return Response(
+            {"error": "your target user is not 'teacher'"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    target_teacher.delete()
     return Response(
         {"message": "teacher deleted successfully"},
         status=status.HTTP_200_OK,
