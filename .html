@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="robots" content="NONE,NOARCHIVE">
     <title>AttributeError
-      at /api/teacher/remove/</title>
+      at /api/student/remove/</title>
     <style>
     html * { padding:0; margin:0; }
     body * { padding:10px 20px; }
@@ -101,9 +101,9 @@
   <body>
     <header id="summary">
       <h1>AttributeError
-        at /api/teacher/remove/</h1>
+        at /api/student/remove/</h1>
       <pre
-        class="exception_value">&#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;</pre>
+        class="exception_value">&#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;</pre>
       <table class="meta">
 
         <tr>
@@ -112,7 +112,7 @@
         </tr>
         <tr>
           <th scope="row">Request URL:</th>
-          <td>http://127.0.0.1:8000/api/teacher/remove/</td>
+          <td>http://127.0.0.1:8000/api/student/remove/?target_user_id_code=456</td>
         </tr>
 
         <tr>
@@ -127,41 +127,44 @@
 
         <tr>
           <th scope="row">Exception Value:</th>
-          <td><pre>&#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;</pre></td>
+          <td><pre>&#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;</pre></td>
         </tr>
 
         <tr>
           <th scope="row">Exception Location:</th>
-          <td><span
-              class="fname">/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd/Academi/views.py</span>,
-            line 403, in remove_teacher</td>
+          <td><span class="fname">C:\Users\Bartar
+              Store\Documents\Development\Repositories\EDAW\BackEnd\Academi\views.py</span>,
+            line 294, in remove_student</td>
         </tr>
 
         <tr>
           <th scope="row">Raised during:</th>
-          <td>Academi.views.remove_teacher</td>
+          <td>Academi.views.remove_student</td>
         </tr>
 
         <tr>
           <th scope="row">Python Executable:</th>
-          <td>/usr/bin/python3</td>
+          <td>C:\Users\Bartar
+            Store\Documents\Development\Virtuals\EDAW\Scripts\python.exe</td>
         </tr>
         <tr>
           <th scope="row">Python Version:</th>
-          <td>3.13.4</td>
+          <td>3.13.3</td>
         </tr>
         <tr>
           <th scope="row">Python Path:</th>
-          <td><pre><code>[&#x27;/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd&#x27;,
- &#x27;/usr/local/lib/python313.zip&#x27;,
- &#x27;/usr/local/lib/python3.13&#x27;,
- &#x27;/usr/local/lib/python3.13/lib-dynload&#x27;,
- &#x27;/home/abolfazl/.local/lib/python3.13/site-packages&#x27;,
- &#x27;/usr/local/lib/python3.13/site-packages&#x27;]</code></pre></td>
+          <td><pre><code>[&#x27;C:\\Users\\Bartar Store\\Documents\\Development\\Repositories\\EDAW\\BackEnd&#x27;,
+ &#x27;C:\\Apps\\Python3.13.3\\python313.zip&#x27;,
+ &#x27;C:\\Apps\\Python3.13.3\\DLLs&#x27;,
+ &#x27;C:\\Apps\\Python3.13.3\\Lib&#x27;,
+ &#x27;C:\\Apps\\Python3.13.3&#x27;,
+ &#x27;C:\\Users\\Bartar Store\\Documents\\Development\\Virtuals\\EDAW&#x27;,
+ &#x27;C:\\Users\\Bartar &#x27;
+ &#x27;Store\\Documents\\Development\\Virtuals\\EDAW\\Lib\\site-packages&#x27;]</code></pre></td>
         </tr>
         <tr>
           <th scope="row">Server time:</th>
-          <td>Tue, 01 Jul 2025 20:52:38 +0000</td>
+          <td>Wed, 02 Jul 2025 22:53:22 +0000</td>
         </tr>
       </table>
     </header>
@@ -178,62 +181,62 @@
 
             <li class="frame django">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/django/core/handlers/exception.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\core\handlers\exception.py</code>,
               line 55, in inner
 
-              <div class="context" id="c140083736375168">
+              <div class="context" id="c2783208252224">
 
-                <ol start="48" class="pre-context" id="pre140083736375168">
-
-                  <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre></pre></li>
+                <ol start="48" class="pre-context" id="pre2783208252224">
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>        return inner</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>    else:</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>        return inner</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre></pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>    else:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>        @wraps(get_response)</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>        def inner(request):</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>        @wraps(get_response)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>            try:</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>        def inner(request):</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>            try:</pre></li>
 
                 </ol>
 
                 <ol start="55" class="context-line">
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>                response = get_response(request)
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>                response = get_response(request)
                                ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='56' class="post-context" id="post140083736375168">
+                <ol start='56' class="post-context" id="post2783208252224">
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>            except Exception as exc:</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>            except Exception as exc:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>                response = response_for_exception(request, exc)</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>                response = response_for_exception(request, exc)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>            return response</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>            return response</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre></pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre>        return inner</pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre>        return inner</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375168', 'post140083736375168')"><pre></pre></li>
+                    onclick="toggle('pre2783208252224', 'post2783208252224')"><pre></pre></li>
 
                 </ol>
 
@@ -242,7 +245,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736375168">
+                <table class="vars" id="v2783208252224">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -254,19 +257,19 @@
                     <tr>
                       <td>exc</td>
                       <td
-                        class="code"><pre>AttributeError(&quot;&#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;&quot;)</pre></td>
+                        class="code"><pre>AttributeError(&quot;&#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;&quot;)</pre></td>
                     </tr>
 
                     <tr>
                       <td>get_response</td>
                       <td
-                        class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f67ca2cfe00&gt;&gt;</pre></td>
+                        class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x0000028803465A90&gt;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -277,63 +280,63 @@
 
             <li class="frame django">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/django/core/handlers/base.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\core\handlers\base.py</code>,
               line 197, in _get_response
 
-              <div class="context" id="c140083736377024">
+              <div class="context" id="c2783208257088">
 
-                <ol start="190" class="pre-context" id="pre140083736377024">
-
-                  <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre></pre></li>
+                <ol start="190" class="pre-context" id="pre2783208257088">
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>        if response is None:</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>        if response is None:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>            if iscoroutinefunction(wrapped_callback):</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>            if iscoroutinefunction(wrapped_callback):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>            try:</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>            try:</pre></li>
 
                 </ol>
 
                 <ol start="197" class="context-line">
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)
                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
                     <span>…</span></li>
                 </ol>
 
-                <ol start='198' class="post-context" id="post140083736377024">
+                <ol start='198' class="post-context" id="post2783208257088">
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>            except Exception as e:</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>            except Exception as e:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>                if response is None:</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>                if response is None:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>                    raise</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>                    raise</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre></pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736377024', 'post140083736377024')"><pre>        # Complain if the view returned None (a common error).</pre></li>
+                    onclick="toggle('pre2783208257088', 'post2783208257088')"><pre>        # Complain if the view returned None (a common error).</pre></li>
 
                 </ol>
 
@@ -342,7 +345,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736377024">
+                <table class="vars" id="v2783208257088">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -354,7 +357,7 @@
                     <tr>
                       <td>callback</td>
                       <td
-                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x7f67ca2fe020&gt;</pre></td>
+                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x0000028803D587C0&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -376,7 +379,7 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -387,13 +390,13 @@
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f67ca2cfe00&gt;</pre></td>
+                        class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x0000028803465A90&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>wrapped_callback</td>
                       <td
-                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x7f67ca2fe020&gt;</pre></td>
+                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x0000028803D587C0&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -404,57 +407,57 @@
 
             <li class="frame django">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/django/views/decorators/csrf.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\views\decorators\csrf.py</code>,
               line 65, in _view_wrapper
 
-              <div class="context" id="c140083736378880">
+              <div class="context" id="c2783208256384">
 
-                <ol start="58" class="pre-context" id="pre140083736378880">
-
-                  <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre></pre></li>
+                <ol start="58" class="pre-context" id="pre2783208256384">
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>        async def _view_wrapper(request, *args, **kwargs):</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>            return await view_func(request, *args, **kwargs)</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>        async def _view_wrapper(request, *args, **kwargs):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre></pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>            return await view_func(request, *args, **kwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>    else:</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre></pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>    else:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>        def _view_wrapper(request, *args, **kwargs):</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre></pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>        def _view_wrapper(request, *args, **kwargs):</pre></li>
 
                 </ol>
 
                 <ol start="65" class="context-line">
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>            return view_func(request, *args, **kwargs)
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>            return view_func(request, *args, **kwargs)
                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
                     <span>…</span></li>
                 </ol>
 
-                <ol start='66' class="post-context" id="post140083736378880">
+                <ol start='66' class="post-context" id="post2783208256384">
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre></pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>    _view_wrapper.csrf_exempt = True</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>    _view_wrapper.csrf_exempt = True</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre></pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736378880', 'post140083736378880')"><pre>    return wraps(view_func)(_view_wrapper)</pre></li>
+                    onclick="toggle('pre2783208256384', 'post2783208256384')"><pre>    return wraps(view_func)(_view_wrapper)</pre></li>
 
                 </ol>
 
@@ -463,7 +466,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736378880">
+                <table class="vars" id="v2783208256384">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -485,13 +488,13 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>view_func</td>
                       <td
-                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x7f67ca2fdf80&gt;</pre></td>
+                        class="code"><pre>&lt;function View.as_view.&lt;locals&gt;.view at 0x0000028803D58720&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -502,63 +505,63 @@
 
             <li class="frame django">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/django/views/generic/base.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\views\generic\base.py</code>,
               line 105, in view
 
-              <div class="context" id="c140083736736576">
+              <div class="context" id="c2783208259264">
 
-                <ol start="98" class="pre-context" id="pre140083736736576">
-
-                  <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>            self = cls(**initkwargs)</pre></li>
+                <ol start="98" class="pre-context" id="pre2783208259264">
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>            self.setup(request, *args, **kwargs)</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>            self = cls(**initkwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>            if not hasattr(self, &quot;request&quot;):</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>            self.setup(request, *args, **kwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>                raise AttributeError(</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>            if not hasattr(self, &quot;request&quot;):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>                    &quot;%s instance has no &#x27;request&#x27; attribute. Did you override &quot;</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>                raise AttributeError(</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>                    &quot;setup() and forget to call super()?&quot; % cls.__name__</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>                    &quot;%s instance has no &#x27;request&#x27; attribute. Did you override &quot;</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>                )</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>                    &quot;setup() and forget to call super()?&quot; % cls.__name__</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>                )</pre></li>
 
                 </ol>
 
                 <ol start="105" class="context-line">
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>            return self.dispatch(request, *args, **kwargs)
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>            return self.dispatch(request, *args, **kwargs)
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
                     <span>…</span></li>
                 </ol>
 
-                <ol start='106' class="post-context" id="post140083736736576">
+                <ol start='106' class="post-context" id="post2783208259264">
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre></pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>        view.view_class = cls</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>        view.view_class = cls</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>        view.view_initkwargs = initkwargs</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>        view.view_initkwargs = initkwargs</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre></pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>        # __name__ and __qualname__ are intentionally left unchanged as</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>        # __name__ and __qualname__ are intentionally left unchanged as</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736736576', 'post140083736736576')"><pre>        # view_class should be used to robustly determine the name of the view</pre></li>
+                    onclick="toggle('pre2783208259264', 'post2783208259264')"><pre>        # view_class should be used to robustly determine the name of the view</pre></li>
 
                 </ol>
 
@@ -567,7 +570,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736736576">
+                <table class="vars" id="v2783208259264">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -600,13 +603,13 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;WSGIRequest: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -617,62 +620,62 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py</code>,
               line 515, in dispatch
 
-              <div class="context" id="c140083736375488">
+              <div class="context" id="c2783208249088">
 
-                <ol start="508" class="pre-context" id="pre140083736375488">
-
-                  <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>                                  self.http_method_not_allowed)</pre></li>
+                <ol start="508" class="pre-context" id="pre2783208249088">
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>            else:</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>                                  self.http_method_not_allowed)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>                handler = self.http_method_not_allowed</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>            else:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre></pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>                handler = self.http_method_not_allowed</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>            response = handler(request, *args, **kwargs)</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre></pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>            response = handler(request, *args, **kwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>        except Exception as exc:</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre></pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>        except Exception as exc:</pre></li>
 
                 </ol>
 
                 <ol start="515" class="context-line">
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>            response = self.handle_exception(exc)
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>            response = self.handle_exception(exc)
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='516' class="post-context" id="post140083736375488">
+                <ol start='516' class="post-context" id="post2783208249088">
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre></pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>        return self.response</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>        return self.response</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre></pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>    def options(self, request, *args, **kwargs):</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>    def options(self, request, *args, **kwargs):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736375488', 'post140083736375488')"><pre>        &quot;&quot;&quot;</pre></li>
+                    onclick="toggle('pre2783208249088', 'post2783208249088')"><pre>        &quot;&quot;&quot;</pre></li>
 
                 </ol>
 
@@ -681,7 +684,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736375488">
+                <table class="vars" id="v2783208249088">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -698,7 +701,7 @@
                     <tr>
                       <td>handler</td>
                       <td
-                        class="code"><pre>&lt;bound method api_view.&lt;locals&gt;.decorator.&lt;locals&gt;.handler of &lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;&gt;</pre></td>
+                        class="code"><pre>&lt;bound method api_view.&lt;locals&gt;.decorator.&lt;locals&gt;.handler of &lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -709,13 +712,13 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -726,62 +729,62 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py</code>,
               line 475, in handle_exception
 
-              <div class="context" id="c140083736374464">
+              <div class="context" id="c2783208258496">
 
-                <ol start="468" class="pre-context" id="pre140083736374464">
-
-                  <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre></pre></li>
+                <ol start="468" class="pre-context" id="pre2783208258496">
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        exception_handler = self.get_exception_handler()</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre></pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        exception_handler = self.get_exception_handler()</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        context = self.get_exception_handler_context()</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        response = exception_handler(exc, context)</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        context = self.get_exception_handler_context()</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre></pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        response = exception_handler(exc, context)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        if response is None:</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre></pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        if response is None:</pre></li>
 
                 </ol>
 
                 <ol start="475" class="context-line">
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>            self.raise_uncaught_exception(exc)
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>            self.raise_uncaught_exception(exc)
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='476' class="post-context" id="post140083736374464">
+                <ol start='476' class="post-context" id="post2783208258496">
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre></pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        response.exception = True</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        response.exception = True</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        return response</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        return response</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre></pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736374464', 'post140083736374464')"><pre>        if settings.DEBUG:</pre></li>
+                    onclick="toggle('pre2783208258496', 'post2783208258496')"><pre>        if settings.DEBUG:</pre></li>
 
                 </ol>
 
@@ -790,7 +793,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736374464">
+                <table class="vars" id="v2783208258496">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -803,20 +806,20 @@
                       <td>context</td>
                       <td class="code"><pre>{&#x27;args&#x27;: (),
  &#x27;kwargs&#x27;: {},
- &#x27;request&#x27;: &lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;,
- &#x27;view&#x27;: &lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;}</pre></td>
+ &#x27;request&#x27;: &lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;,
+ &#x27;view&#x27;: &lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;}</pre></td>
                     </tr>
 
                     <tr>
                       <td>exc</td>
                       <td
-                        class="code"><pre>AttributeError(&quot;&#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;&quot;)</pre></td>
+                        class="code"><pre>AttributeError(&quot;&#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;&quot;)</pre></td>
                     </tr>
 
                     <tr>
                       <td>exception_handler</td>
                       <td
-                        class="code"><pre>&lt;function exception_handler at 0x7f67ca2bab60&gt;</pre></td>
+                        class="code"><pre>&lt;function exception_handler at 0x0000028803D25620&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -827,7 +830,7 @@
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -838,62 +841,62 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py</code>,
               line 486, in raise_uncaught_exception
 
-              <div class="context" id="c140083736372992">
+              <div class="context" id="c2783208254656">
 
-                <ol start="479" class="pre-context" id="pre140083736372992">
-
-                  <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre></pre></li>
+                <ol start="479" class="pre-context" id="pre2783208254656">
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>        if settings.DEBUG:</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>    def raise_uncaught_exception(self, exc):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>            request = self.request</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>        if settings.DEBUG:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>            renderer_format = getattr(request.accepted_renderer, &#x27;format&#x27;)</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>            request = self.request</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>            use_plaintext_traceback = renderer_format not in (&#x27;html&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;)</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>            renderer_format = getattr(request.accepted_renderer, &#x27;format&#x27;)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>            request.force_plaintext_errors(use_plaintext_traceback)</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>            use_plaintext_traceback = renderer_format not in (&#x27;html&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;)</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>            request.force_plaintext_errors(use_plaintext_traceback)</pre></li>
 
                 </ol>
 
                 <ol start="486" class="context-line">
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>        raise exc
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>        raise exc
              ^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='487' class="post-context" id="post140083736372992">
+                <ol start='487' class="post-context" id="post2783208254656">
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre></pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>    # Note: Views are made CSRF exempt from within `as_view` as to prevent</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>    # Note: Views are made CSRF exempt from within `as_view` as to prevent</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>    # accidental removal of this exemption in cases where `dispatch` needs to</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>    # accidental removal of this exemption in cases where `dispatch` needs to</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>    # be overridden.</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>    # be overridden.</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>    def dispatch(self, request, *args, **kwargs):</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>    def dispatch(self, request, *args, **kwargs):</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736372992', 'post140083736372992')"><pre>        &quot;&quot;&quot;</pre></li>
+                    onclick="toggle('pre2783208254656', 'post2783208254656')"><pre>        &quot;&quot;&quot;</pre></li>
 
                 </ol>
 
@@ -902,7 +905,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736372992">
+                <table class="vars" id="v2783208254656">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -914,7 +917,7 @@
                     <tr>
                       <td>exc</td>
                       <td
-                        class="code"><pre>AttributeError(&quot;&#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;&quot;)</pre></td>
+                        class="code"><pre>AttributeError(&quot;&#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;&quot;)</pre></td>
                     </tr>
 
                     <tr>
@@ -925,13 +928,13 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -947,63 +950,63 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py</code>,
               line 512, in dispatch
 
-              <div class="context" id="c140083736366976">
+              <div class="context" id="c2783208256320">
 
-                <ol start="505" class="pre-context" id="pre140083736366976">
-
-                  <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>            # Get the appropriate handler method</pre></li>
+                <ol start="505" class="pre-context" id="pre2783208256320">
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>            if request.method.lower() in self.http_method_names:</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>            # Get the appropriate handler method</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>                handler = getattr(self, request.method.lower(),</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>            if request.method.lower() in self.http_method_names:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>                                  self.http_method_not_allowed)</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>                handler = getattr(self, request.method.lower(),</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>            else:</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>                                  self.http_method_not_allowed)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>                handler = self.http_method_not_allowed</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>            else:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre></pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>                handler = self.http_method_not_allowed</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre></pre></li>
 
                 </ol>
 
                 <ol start="512" class="context-line">
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>            response = handler(request, *args, **kwargs)
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>            response = handler(request, *args, **kwargs)
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
                     <span>…</span></li>
                 </ol>
 
-                <ol start='513' class="post-context" id="post140083736366976">
+                <ol start='513' class="post-context" id="post2783208256320">
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre></pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>        except Exception as exc:</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>        except Exception as exc:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>            response = self.handle_exception(exc)</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>            response = self.handle_exception(exc)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre></pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>        self.response = self.finalize_response(request, response, *args, **kwargs)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736366976', 'post140083736366976')"><pre>        return self.response</pre></li>
+                    onclick="toggle('pre2783208256320', 'post2783208256320')"><pre>        return self.response</pre></li>
 
                 </ol>
 
@@ -1012,7 +1015,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736366976">
+                <table class="vars" id="v2783208256320">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -1029,7 +1032,7 @@
                     <tr>
                       <td>handler</td>
                       <td
-                        class="code"><pre>&lt;bound method api_view.&lt;locals&gt;.decorator.&lt;locals&gt;.handler of &lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;&gt;</pre></td>
+                        class="code"><pre>&lt;bound method api_view.&lt;locals&gt;.decorator.&lt;locals&gt;.handler of &lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -1040,13 +1043,13 @@
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -1057,62 +1060,62 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/decorators.py</code>,
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\decorators.py</code>,
               line 50, in handler
 
-              <div class="context" id="c140083736364096">
+              <div class="context" id="c2783208250560">
 
-                <ol start="43" class="pre-context" id="pre140083736364096">
-
-                  <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        assert isinstance(http_method_names, (list, tuple)), \</pre></li>
+                <ol start="43" class="pre-context" id="pre2783208250560">
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>            &#x27;@api_view expected a list of strings, received %s&#x27; % type(http_method_names).__name__</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        assert isinstance(http_method_names, (list, tuple)), \</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre></pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>            &#x27;@api_view expected a list of strings, received %s&#x27; % type(http_method_names).__name__</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        allowed_methods = set(http_method_names) | {&#x27;options&#x27;}</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        WrappedAPIView.http_method_names = [method.lower() for method in allowed_methods]</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        allowed_methods = set(http_method_names) | {&#x27;options&#x27;}</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre></pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        WrappedAPIView.http_method_names = [method.lower() for method in allowed_methods]</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        def handler(self, *args, **kwargs):</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre></pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        def handler(self, *args, **kwargs):</pre></li>
 
                 </ol>
 
                 <ol start="50" class="context-line">
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>            return func(*args, **kwargs)
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>            return func(*args, **kwargs)
                        ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='51' class="post-context" id="post140083736364096">
+                <ol start='51' class="post-context" id="post2783208250560">
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre></pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        for method in http_method_names:</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        for method in http_method_names:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>            setattr(WrappedAPIView, method.lower(), handler)</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>            setattr(WrappedAPIView, method.lower(), handler)</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre></pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        WrappedAPIView.__name__ = func.__name__</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        WrappedAPIView.__name__ = func.__name__</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736364096', 'post140083736364096')"><pre>        WrappedAPIView.__module__ = func.__module__</pre></li>
+                    onclick="toggle('pre2783208250560', 'post2783208250560')"><pre>        WrappedAPIView.__module__ = func.__module__</pre></li>
 
                 </ol>
 
@@ -1121,7 +1124,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736364096">
+                <table class="vars" id="v2783208250560">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -1133,13 +1136,13 @@
                     <tr>
                       <td>args</td>
                       <td
-                        class="code"><pre>(&lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;,)</pre></td>
+                        class="code"><pre>(&lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;,)</pre></td>
                     </tr>
 
                     <tr>
                       <td>func</td>
                       <td
-                        class="code"><pre>&lt;function remove_teacher at 0x7f67ca2fde40&gt;</pre></td>
+                        class="code"><pre>&lt;function remove_student at 0x0000028803D58540&gt;</pre></td>
                     </tr>
 
                     <tr>
@@ -1150,7 +1153,7 @@
                     <tr>
                       <td>self</td>
                       <td
-                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x7f67ca05a0f0&gt;</pre></td>
+                        class="code"><pre>&lt;Academi.views.WrappedAPIView object at 0x000002880424AD50&gt;</pre></td>
                     </tr>
 
                   </tbody>
@@ -1161,62 +1164,62 @@
 
             <li class="frame user">
 
-              <code
-                class="fname">/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd/Academi/views.py</code>,
-              line 403, in remove_teacher
+              <code class="fname">C:\Users\Bartar
+                Store\Documents\Development\Repositories\EDAW\BackEnd\Academi\views.py</code>,
+              line 294, in remove_student
 
-              <div class="context" id="c140083736902080">
+              <div class="context" id="c2783208250816">
 
-                <ol start="396" class="pre-context" id="pre140083736902080">
-
-                  <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>        )</pre></li>
+                <ol start="287" class="pre-context" id="pre2783208250816">
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre></pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>    except CustomUser.DoesNotExist:</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>    except CustomUser.DoesNotExist:</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>        return Response(</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>        return Response(</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>            {&quot;error&quot;: &quot;teacher not found&quot;},</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>            {&quot;error&quot;: &quot;Target user not found&quot;},</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>            status=status.HTTP_404_NOT_FOUND,</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>            status=status.HTTP_404_NOT_FOUND,</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>        )</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>        )</pre></li>
+
+                  <li
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre></pre></li>
 
                 </ol>
 
-                <ol start="403" class="context-line">
+                <ol start="294" class="context-line">
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>    CustomUser.objects.delete(target_teacher)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>    if target_user.user_type != &quot;student&quot;:
+            ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
                 </ol>
 
-                <ol start='404' class="post-context" id="post140083736902080">
+                <ol start='295' class="post-context" id="post2783208250816">
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>    return Response(</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>        return Response(</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>        {&quot;message&quot;: &quot;teacher deleted successfully&quot;},</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>            {&quot;error&quot;: &quot;Only student accounts can be removed.&quot;},</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>        status=status.HTTP_200_OK,</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>            status=status.HTTP_400_BAD_REQUEST,</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre>    )</pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>        )</pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre></pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre></pre></li>
 
                   <li
-                    onclick="toggle('pre140083736902080', 'post140083736902080')"><pre></pre></li>
+                    onclick="toggle('pre2783208250816', 'post2783208250816')"><pre>    target_user.delete()</pre></li>
 
                 </ol>
 
@@ -1225,7 +1228,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
 
-                <table class="vars" id="v140083736902080">
+                <table class="vars" id="v2783208250816">
                   <thead>
                     <tr>
                       <th scope="col">Variable</th>
@@ -1237,23 +1240,23 @@
                     <tr>
                       <td>_</td>
                       <td
-                        class="code"><pre>{&#x27;token_type&#x27;: &#x27;access&#x27;, &#x27;exp&#x27;: 1752007703, &#x27;iat&#x27;: 1751402903, &#x27;jti&#x27;: &#x27;a8d8f6a1d678401fa9071ef9d38791cd&#x27;, &#x27;user_id&#x27;: 1}</pre></td>
+                        class="code"><pre>{&#x27;token_type&#x27;: &#x27;access&#x27;, &#x27;exp&#x27;: 1751973232, &#x27;iat&#x27;: 1751368432, &#x27;jti&#x27;: &#x27;3c9925082a724c589e1bfb937d5f8a2e&#x27;, &#x27;user_id&#x27;: 1}</pre></td>
                     </tr>
 
                     <tr>
                       <td>request</td>
                       <td
-                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/teacher/remove/&#x27;&gt;</pre></td>
+                        class="code"><pre>&lt;rest_framework.request.Request: DELETE &#x27;/api/student/remove/?target_user_id_code=456&#x27;&gt;</pre></td>
                     </tr>
 
                     <tr>
-                      <td>target_teacher</td>
+                      <td>target_user</td>
                       <td class="code"><pre>&lt;QuerySet []&gt;</pre></td>
                     </tr>
 
                     <tr>
-                      <td>target_teacher_id_code</td>
-                      <td class="code"><pre>None</pre></td>
+                      <td>target_user_id_code</td>
+                      <td class="code"><pre>&#x27;456&#x27;</pre></td>
                     </tr>
 
                     <tr>
@@ -1266,7 +1269,7 @@
                       <td>user_auth</td>
                       <td
                         class="code"><pre>(&lt;CustomUser: Abolfazl Khezri&gt;,
- {&#x27;token_type&#x27;: &#x27;access&#x27;, &#x27;exp&#x27;: 1752007703, &#x27;iat&#x27;: 1751402903, &#x27;jti&#x27;: &#x27;a8d8f6a1d678401fa9071ef9d38791cd&#x27;, &#x27;user_id&#x27;: 1})</pre></td>
+ {&#x27;token_type&#x27;: &#x27;access&#x27;, &#x27;exp&#x27;: 1751973232, &#x27;iat&#x27;: 1751368432, &#x27;jti&#x27;: &#x27;3c9925082a724c589e1bfb937d5f8a2e&#x27;, &#x27;user_id&#x27;: 1})</pre></td>
                     </tr>
 
                   </tbody>
@@ -1283,7 +1286,7 @@
           <div id="pastebinTraceback" class="pastebin">
             <input type="hidden" name="language" value="PythonConsole">
             <input type="hidden" name="title"
-              value="AttributeError at /api/teacher/remove/">
+              value="AttributeError at /api/student/remove/">
             <input type="hidden" name="source" value="Django Dpaste Agent">
             <input type="hidden" name="poster" value="Django">
             <textarea name="content" id="traceback_area" cols="140" rows="25">
@@ -1291,10 +1294,10 @@ Environment:
 
 
 Request Method: DELETE
-Request URL: http://127.0.0.1:8000/api/teacher/remove/
+Request URL: http://127.0.0.1:8000/api/student/remove/?target_user_id_code=456
 
 Django Version: 5.2.3
-Python Version: 3.13.4
+Python Version: 3.13.3
 Installed Applications:
 [&#x27;django.contrib.admin&#x27;,
  &#x27;django.contrib.auth&#x27;,
@@ -1318,39 +1321,39 @@ Installed Middleware:
 
 
 Traceback (most recent call last):
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
                ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
     return view_func(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\django\views\generic\base.py", line 105, in view
     return self.dispatch(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
     response = self.handle_exception(exc)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
     self.raise_uncaught_exception(exc)
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
     raise exc
     ^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
     response = handler(request, *args, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/.local/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+  File "C:\Users\Bartar Store\Documents\Development\Virtuals\EDAW\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
     return func(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd/Academi/views.py", line 403, in remove_teacher
-    CustomUser.objects.delete(target_teacher)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bartar Store\Documents\Development\Repositories\EDAW\BackEnd\Academi\views.py", line 294, in remove_student
+    if target_user.user_type != &quot;student&quot;:
+       ^^^^^^^^^^^^^^^^^^^^^
 
-Exception Type: AttributeError at /api/teacher/remove/
-Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;delete&#x27;
+Exception Type: AttributeError at /api/student/remove/
+Exception Value: &#x27;QuerySet&#x27; object has no attribute &#x27;user_type&#x27;
 </textarea>
             <br><br>
             <input type="submit"
@@ -1368,7 +1371,22 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
 
         <h3 id="get-info">GET</h3>
 
-        <p>No GET data</p>
+        <table class="req">
+          <thead>
+            <tr>
+              <th scope="col">Variable</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>target_user_id_code</td>
+              <td class="code"><pre>&#x27;456&#x27;</pre></td>
+            </tr>
+
+          </tbody>
+        </table>
 
         <h3 id="post-info">POST</h3>
 
@@ -1393,45 +1411,88 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
           <tbody>
 
             <tr>
-              <td>BUNDLED_DEBUGPY_PATH</td>
+              <td>ACSETUPSVCPORT</td>
+              <td class="code"><pre>&#x27;23210&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>ALLUSERSPROFILE</td>
+              <td class="code"><pre>&#x27;C:\\ProgramData&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>APPCODE_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/.vscode/extensions/ms-python.debugpy-2025.11.2025070101-linux-x64/bundled/libs/debugpy&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\appcode.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>CHROME_DESKTOP</td>
-              <td class="code"><pre>&#x27;code.desktop&#x27;</pre></td>
+              <td>APPDATA</td>
+              <td
+                class="code"><pre>&#x27;C:\\Users\\Bartar Store\\AppData\\Roaming&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>COLORTERM</td>
-              <td class="code"><pre>&#x27;truecolor&#x27;</pre></td>
+              <td>CLION_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\clion.vmoptions&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>COMMONPROGRAMFILES</td>
+              <td
+                class="code"><pre>&#x27;C:\\Program Files\\Common Files&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>COMMONPROGRAMFILES(X86)</td>
+              <td
+                class="code"><pre>&#x27;C:\\Program Files (x86)\\Common Files&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>COMMONPROGRAMW6432</td>
+              <td
+                class="code"><pre>&#x27;C:\\Program Files\\Common Files&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>COMPUTERNAME</td>
+              <td class="code"><pre>&#x27;DESKTOP-2D7L7LG&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>COMSPEC</td>
+              <td
+                class="code"><pre>&#x27;C:\\Windows\\system32\\cmd.exe&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>CONTENT_LENGTH</td>
-              <td class="code"><pre>&#x27;41&#x27;</pre></td>
+              <td class="code"><pre>&#x27;&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>CONTENT_TYPE</td>
-              <td class="code"><pre>&#x27;application/json&#x27;</pre></td>
+              <td class="code"><pre>&#x27;text/plain&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>DBUS_SESSION_BUS_ADDRESS</td>
+              <td>DATAGRIP_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;unix:path=/run/user/1000/bus&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\datagrip.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>DESKTOP_SESSION</td>
-              <td class="code"><pre>&#x27;plasma&#x27;</pre></td>
+              <td>DATASPELL_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\dataspell.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>DISPLAY</td>
-              <td class="code"><pre>&#x27;:0&#x27;</pre></td>
+              <td>DEVECOSTUDIO_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\devecostudio.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1440,66 +1501,46 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             </tr>
 
             <tr>
+              <td>DRIVERDATA</td>
+              <td
+                class="code"><pre>&#x27;C:\\Windows\\System32\\Drivers\\DriverData&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>FPS_BROWSER_APP_PROFILE_STRING</td>
+              <td class="code"><pre>&#x27;Internet Explorer&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>FPS_BROWSER_USER_PROFILE_STRING</td>
+              <td class="code"><pre>&#x27;Default&#x27;</pre></td>
+            </tr>
+
+            <tr>
               <td>GATEWAY_INTERFACE</td>
               <td class="code"><pre>&#x27;CGI/1.1&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>GDK_BACKEND</td>
-              <td class="code"><pre>&#x27;x11&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>GDMSESSION</td>
-              <td class="code"><pre>&#x27;plasma&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>GDM_LANG</td>
-              <td class="code"><pre>&#x27;en_US.UTF-8&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>GIT_ASKPASS</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>GNOME_DESKTOP_SESSION_ID</td>
-              <td class="code"><pre>&#x27;this-is-deprecated&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>GPG_AGENT_INFO</td>
+              <td>GATEWAY_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/run/user/1000/gnupg/S.gpg-agent:0:1&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\gateway.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>GTK2_RC_FILES</td>
+              <td>GOLAND_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/etc/gtk-2.0/gtkrc:/home/abolfazl/.gtkrc-2.0:/home/abolfazl/.config/gtkrc-2.0&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\goland.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>GTK_MODULES</td>
-              <td class="code"><pre>&#x27;gail:atk-bridge&#x27;</pre></td>
+              <td>HOMEDRIVE</td>
+              <td class="code"><pre>&#x27;C:&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>GTK_RC_FILES</td>
-              <td
-                class="code"><pre>&#x27;/etc/gtk/gtkrc:/home/abolfazl/.gtkrc:/home/abolfazl/.config/gtkrc&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>HOME</td>
-              <td class="code"><pre>&#x27;/home/abolfazl&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>HTTP_ACCEPT</td>
-              <td class="code"><pre>&#x27;*/*&#x27;</pre></td>
+              <td>HOMEPATH</td>
+              <td class="code"><pre>&#x27;\\Users\\Bartar Store&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1525,154 +1566,149 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             <tr>
               <td>HTTP_USER_AGENT</td>
               <td
-                class="code"><pre>&#x27;Thunder Client (https://www.thunderclient.com)&#x27;</pre></td>
+                class="code"><pre>&#x27;got (https://github.com/sindresorhus/got)&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>INVOCATION_ID</td>
+              <td>IDEA_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;79cc8960da2c429aa3586db22ebdba4d&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\idea.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>JOURNAL_STREAM</td>
-              <td class="code"><pre>&#x27;8:27983&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>KDE_APPLICATIONS_AS_SCOPE</td>
-              <td class="code"><pre>&#x27;1&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>KDE_FULL_SESSION</td>
-              <td class="code"><pre>&#x27;true&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>KDE_SESSION_UID</td>
-              <td class="code"><pre>&#x27;1000&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>KDE_SESSION_VERSION</td>
-              <td class="code"><pre>&#x27;5&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>LANG</td>
-              <td class="code"><pre>&#x27;en_US.UTF-8&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>LESS</td>
-              <td class="code"><pre>&#x27;-R&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>LOGNAME</td>
-              <td class="code"><pre>&#x27;abolfazl&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>LSCOLORS</td>
+              <td>JETBRAINSCLIENT_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;Gxfxcxdxbxegedabagacad&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\jetbrainsclient.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>LS_COLORS</td>
+              <td>JETBRAINS_CLIENT_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\jetbrains_client.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>MANAGERPID</td>
-              <td class="code"><pre>&#x27;1440&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>OLDPWD</td>
+              <td>LOCALAPPDATA</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/Documents/Development/Repositories/EDAW&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\Users\\Bartar Store\\AppData\\Local&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>ORIGINAL_XDG_CURRENT_DESKTOP</td>
-              <td class="code"><pre>&#x27;KDE&#x27;</pre></td>
+              <td>LOGONSERVER</td>
+              <td class="code"><pre>&#x27;\\\\DESKTOP-2D7L7LG&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>P9K_SSH</td>
-              <td class="code"><pre>&#x27;0&#x27;</pre></td>
+              <td>NUMBER_OF_PROCESSORS</td>
+              <td class="code"><pre>&#x27;8&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>P9K_TTY</td>
-              <td class="code"><pre>&#x27;old&#x27;</pre></td>
+              <td>ONEDRIVE</td>
+              <td
+                class="code"><pre>&#x27;C:\\Users\\Bartar Store\\OneDrive&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>PAGER</td>
-              <td class="code"><pre>&#x27;less&#x27;</pre></td>
+              <td>OS</td>
+              <td class="code"><pre>&#x27;Windows_NT&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>PATH</td>
+              <td class="code"><pre>(&#x27;C:\\Users\\Bartar &#x27;
+ &#x27;Store\\Documents\\Development\\Virtuals\\EDAW\\Scripts;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program &#x27;
+ &#x27;Files (x86)\\ATI &#x27;
+ &#x27;Technologies\\ATI.ACE\\Core-Static;C:\\Apps\\Git\\cmd;C:\\Apps\\Python3.13.3\\Scripts\\;C:\\Apps\\Python3.13.3\\;C:\\Users\\Bartar &#x27;
+ &#x27;Store\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Apps\\Microsoft VS &#x27;
+ &#x27;Code\\bin;C:\\Users\\Bartar Store\\AppData\\Local\\GitHubDesktop\\bin&#x27;)</pre></td>
+            </tr>
+
+            <tr>
+              <td>PATHEXT</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/abolfazl/.vscode/extensions/ms-python.debugpy-2025.11.2025070101-linux-x64/bundled/scripts/noConfigScripts&#x27;</pre></td>
+                class="code"><pre>&#x27;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>PATH_INFO</td>
-              <td class="code"><pre>&#x27;/api/teacher/remove/&#x27;</pre></td>
+              <td class="code"><pre>&#x27;/api/student/remove/&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>PS1</td>
-              <td class="code"><pre>&#x27;EDAW%m%# &#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>PWD</td>
+              <td>PHPSTORM_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\phpstorm.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>PYDEVD_DISABLE_FILE_VALIDATION</td>
-              <td class="code"><pre>&#x27;1&#x27;</pre></td>
+              <td>PROCESSOR_ARCHITECTURE</td>
+              <td class="code"><pre>&#x27;AMD64&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>PYTHON_BASIC_REPL</td>
-              <td class="code"><pre>&#x27;1&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>QTWEBENGINE_DICTIONARIES_PATH</td>
+              <td>PROCESSOR_IDENTIFIER</td>
               <td
-                class="code"><pre>&#x27;/usr/share/hunspell-bdic/&#x27;</pre></td>
+                class="code"><pre>&#x27;Intel64 Family 6 Model 151 Stepping 5, GenuineIntel&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>QT_ACCESSIBILITY</td>
-              <td class="code"><pre>&#x27;1&#x27;</pre></td>
+              <td>PROCESSOR_LEVEL</td>
+              <td class="code"><pre>&#x27;6&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>QT_AUTO_SCREEN_SCALE_FACTOR</td>
-              <td class="code"><pre>&#x27;0&#x27;</pre></td>
+              <td>PROCESSOR_REVISION</td>
+              <td class="code"><pre>&#x27;9705&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>QT_IM_MODULE</td>
-              <td class="code"><pre>&#x27;ibus&#x27;</pre></td>
+              <td>PROGRAMDATA</td>
+              <td class="code"><pre>&#x27;C:\\ProgramData&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PROGRAMFILES</td>
+              <td class="code"><pre>&#x27;C:\\Program Files&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PROGRAMFILES(X86)</td>
+              <td
+                class="code"><pre>&#x27;C:\\Program Files (x86)&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PROGRAMW6432</td>
+              <td class="code"><pre>&#x27;C:\\Program Files&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PROMPT</td>
+              <td class="code"><pre>&#x27;(EDAW) $P$G&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PSMODULEPATH</td>
+              <td class="code"><pre>(&#x27;C:\\Program &#x27;
+ &#x27;Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules&#x27;)</pre></td>
+            </tr>
+
+            <tr>
+              <td>PUBLIC</td>
+              <td class="code"><pre>&#x27;C:\\Users\\Public&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>PYCHARM_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\pycharm.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>QUERY_STRING</td>
-              <td class="code"><pre>&#x27;&#x27;</pre></td>
+              <td
+                class="code"><pre>&#x27;target_user_id_code=456&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1691,8 +1727,31 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             </tr>
 
             <tr>
+              <td>RIDER_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\rider.vmoptions&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>RLSSVCPORT</td>
+              <td class="code"><pre>&#x27;22112&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>RUBYMINE_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\rubymine.vmoptions&#x27;</pre></td>
+            </tr>
+
+            <tr>
               <td>RUN_MAIN</td>
               <td class="code"><pre>&#x27;true&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>RUSTROVER_VM_OPTIONS</td>
+              <td
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\RustRover.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1702,7 +1761,7 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
 
             <tr>
               <td>SERVER_NAME</td>
-              <td class="code"><pre>&#x27;localhost&#x27;</pre></td>
+              <td class="code"><pre>&#x27;DESKTOP-2D7L7LG&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1721,75 +1780,63 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             </tr>
 
             <tr>
-              <td>SESSION_MANAGER</td>
+              <td>SESSIONNAME</td>
+              <td class="code"><pre>&#x27;Console&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>STUDIO_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;local/dhcppc2:@/tmp/.ICE-unix/3275,unix/dhcppc2:/tmp/.ICE-unix/3275&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\studio.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>SHELL</td>
-              <td class="code"><pre>&#x27;/bin/zsh&#x27;</pre></td>
+              <td>SYSTEMDRIVE</td>
+              <td class="code"><pre>&#x27;C:&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>SHLVL</td>
-              <td class="code"><pre>&#x27;1&#x27;</pre></td>
+              <td>SYSTEMROOT</td>
+              <td class="code"><pre>&#x27;C:\\Windows&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>SSH_AGENT_LAUNCHER</td>
-              <td class="code"><pre>&#x27;openssh&#x27;</pre></td>
+              <td>TEMP</td>
+              <td
+                class="code"><pre>&#x27;C:\\Users\\BARTAR~1\\AppData\\Local\\Temp&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>SSH_AUTH_SOCK</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+              <td>TMP</td>
+              <td
+                class="code"><pre>&#x27;C:\\Users\\BARTAR~1\\AppData\\Local\\Temp&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>SYSTEMD_EXEC_PID</td>
-              <td class="code"><pre>&#x27;3320&#x27;</pre></td>
+              <td>USERDOMAIN</td>
+              <td class="code"><pre>&#x27;DESKTOP-2D7L7LG&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>TERM</td>
-              <td class="code"><pre>&#x27;xterm-256color&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>TERM_PROGRAM</td>
-              <td class="code"><pre>&#x27;vscode&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>TERM_PROGRAM_VERSION</td>
-              <td class="code"><pre>&#x27;1.101.2&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>TZ</td>
-              <td class="code"><pre>&#x27;UTC&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>USER</td>
-              <td class="code"><pre>&#x27;abolfazl&#x27;</pre></td>
+              <td>USERDOMAIN_ROAMINGPROFILE</td>
+              <td class="code"><pre>&#x27;DESKTOP-2D7L7LG&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>USERNAME</td>
-              <td class="code"><pre>&#x27;abolfazl&#x27;</pre></td>
+              <td class="code"><pre>&#x27;Bartar Store&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>USER_ZDOTDIR</td>
-              <td class="code"><pre>&#x27;/home/abolfazl&#x27;</pre></td>
+              <td>USERPROFILE</td>
+              <td
+                class="code"><pre>&#x27;C:\\Users\\Bartar Store&#x27;</pre></td>
             </tr>
 
             <tr>
               <td>VIRTUAL_ENV</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/Documents/Development/Virtuals/EDAW&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\Users\\Bartar Store\\Documents\\Development\\Virtuals\\EDAW&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1798,149 +1845,40 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             </tr>
 
             <tr>
-              <td>VSCODE_DEBUGPY_ADAPTER_ENDPOINTS</td>
+              <td>WEBIDE_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/home/abolfazl/.vscode/extensions/ms-python.debugpy-2025.11.2025070101-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-78444010cfa0fc66.txt&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\webide.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>VSCODE_GIT_ASKPASS_EXTRA_ARGS</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>VSCODE_GIT_ASKPASS_MAIN</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>VSCODE_GIT_ASKPASS_NODE</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>VSCODE_GIT_IPC_HANDLE</td>
+              <td>WEBSTORM_VM_OPTIONS</td>
               <td
-                class="code"><pre>&#x27;/run/user/1000/vscode-git-843554e7da.sock&#x27;</pre></td>
+                class="code"><pre>&#x27;C:\\ja-netfilter\\vmoptions\\webstorm.vmoptions&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>VSCODE_INJECTION</td>
+              <td>WINDIR</td>
+              <td class="code"><pre>&#x27;C:\\Windows&#x27;</pre></td>
+            </tr>
+
+            <tr>
+              <td>ZES_ENABLE_SYSMAN</td>
               <td class="code"><pre>&#x27;1&#x27;</pre></td>
             </tr>
 
             <tr>
-              <td>VSCODE_NONCE</td>
+              <td>_OLD_VIRTUAL_PATH</td>
               <td
-                class="code"><pre>&#x27;64a8b9f8-fcbf-4435-a817-114a387b2a55&#x27;</pre></td>
+                class="code"><pre>(&#x27;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program &#x27;
+ &#x27;Files (x86)\\ATI &#x27;
+ &#x27;Technologies\\ATI.ACE\\Core-Static;C:\\Apps\\Git\\cmd;C:\\Apps\\Python3.13.3\\Scripts\\;C:\\Apps\\Python3.13.3\\;C:\\Users\\Bartar &#x27;
+ &#x27;Store\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Apps\\Microsoft VS &#x27;
+ &#x27;Code\\bin;C:\\Users\\Bartar Store\\AppData\\Local\\GitHubDesktop\\bin&#x27;)</pre></td>
             </tr>
 
             <tr>
-              <td>WINDOWPATH</td>
-              <td class="code"><pre>&#x27;2&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XAUTHORITY</td>
-              <td class="code"><pre>&#x27;********************&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XCURSOR_SIZE</td>
-              <td class="code"><pre>&#x27;24&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XCURSOR_THEME</td>
-              <td class="code"><pre>&#x27;breeze_cursors&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_CONFIG_DIRS</td>
-              <td
-                class="code"><pre>&#x27;/home/abolfazl/.config/kdedefaults:/etc/xdg:/usr/share/desktop-base/kf5-settings&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_CURRENT_DESKTOP</td>
-              <td class="code"><pre>&#x27;KDE&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_DATA_DIRS</td>
-              <td
-                class="code"><pre>&#x27;/usr/share/gnome:/usr/local/share/:/usr/share/&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_MENU_PREFIX</td>
-              <td class="code"><pre>&#x27;gnome-&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_RUNTIME_DIR</td>
-              <td class="code"><pre>&#x27;/run/user/1000&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_SEAT</td>
-              <td class="code"><pre>&#x27;seat0&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_SESSION_CLASS</td>
-              <td class="code"><pre>&#x27;user&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_SESSION_DESKTOP</td>
-              <td class="code"><pre>&#x27;plasma&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_SESSION_ID</td>
-              <td class="code"><pre>&#x27;5&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_SESSION_TYPE</td>
-              <td class="code"><pre>&#x27;x11&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XDG_VTNR</td>
-              <td class="code"><pre>&#x27;2&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>XMODIFIERS</td>
-              <td class="code"><pre>&#x27;@im=ibus&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>ZDOTDIR</td>
-              <td class="code"><pre>&#x27;/home/abolfazl&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>ZSH</td>
-              <td
-                class="code"><pre>&#x27;/home/abolfazl/.oh-my-zsh&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>_</td>
-              <td class="code"><pre>&#x27;/usr/bin/python3&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>_P9K_SSH_TTY</td>
-              <td class="code"><pre>&#x27;/dev/pts/4&#x27;</pre></td>
-            </tr>
-
-            <tr>
-              <td>_P9K_TTY</td>
-              <td class="code"><pre>&#x27;/dev/pts/4&#x27;</pre></td>
+              <td>_OLD_VIRTUAL_PROMPT</td>
+              <td class="code"><pre>&#x27;$P$G&#x27;</pre></td>
             </tr>
 
             <tr>
@@ -1958,7 +1896,7 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             <tr>
               <td>wsgi.input</td>
               <td
-                class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x7f67c95e5390&gt;</pre></td>
+                class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x000002880428C8B0&gt;</pre></td>
             </tr>
 
             <tr>
@@ -2038,7 +1976,7 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
             <tr>
               <td>BASE_DIR</td>
               <td
-                class="code"><pre>PosixPath(&#x27;/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd&#x27;)</pre></td>
+                class="code"><pre>WindowsPath(&#x27;C:/Users/Bartar Store/Documents/Development/Repositories/EDAW/BackEnd&#x27;)</pre></td>
             </tr>
 
             <tr>
@@ -2127,7 +2065,7 @@ Exception Value: &#x27;CustomUserManager&#x27; object has no attribute &#x27;del
              &#x27;CONN_MAX_AGE&#x27;: 0,
              &#x27;ENGINE&#x27;: &#x27;django.db.backends.sqlite3&#x27;,
              &#x27;HOST&#x27;: &#x27;&#x27;,
-             &#x27;NAME&#x27;: PosixPath(&#x27;/home/abolfazl/Documents/Development/Repositories/EDAW/BackEnd/db.sqlite3&#x27;),
+             &#x27;NAME&#x27;: WindowsPath(&#x27;C:/Users/Bartar Store/Documents/Development/Repositories/EDAW/BackEnd/db.sqlite3&#x27;),
              &#x27;OPTIONS&#x27;: {},
              &#x27;PASSWORD&#x27;: &#x27;********************&#x27;,
              &#x27;PORT&#x27;: &#x27;&#x27;,
