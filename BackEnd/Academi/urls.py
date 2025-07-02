@@ -49,7 +49,7 @@ urlpatterns = [
     path("teacher/profile/", show_teacher_profile, name="teacher_profile"),
     # DELETE /api/teacher/remove/
     # Admin only
-    # Body: { "teacher_id_code": int }
+    # Body: {"teacher_id_code":str("techer_id_code")}
     path("teacher/remove/", remove_teacher, name="remove_teacher"),
     # PATCH /api/student/change-class/
     # Admin only
