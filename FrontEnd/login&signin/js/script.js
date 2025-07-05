@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   loginForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const idCode = document.getElementById("email").value.trim();
+    const idCode = document.getElementById("id_code").value.trim();
     const password = document.getElementById("password").value;
     const remember = document.getElementById("remember_me").checked;
 
