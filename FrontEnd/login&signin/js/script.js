@@ -1,3 +1,23 @@
+function showAlert(message, type = "danger", timeout = 3000) {
+  const alertContainer = document.getElementById("alert-container");
+  const alert = document.createElement("div");
+  alert.className = `alert alert-${type} alert-dismissible fade show`;
+  alert.role = "alert";
+  alert.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
+  alert.innerHTML = `
+    ${message}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  `;
+
+  alertContainer.appendChild(alert);
+
+  setTimeout(() => {
+    alert.classList.remove("show");
+    alert.classList.add("hide");
+    alert.addEventListener("transitionend", () => alert.remove());
+  }, timeout);
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
   const loginForm = document.querySelector("form");
   const submitBtn = loginForm.querySelector("button[type='submit']");
@@ -20,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else if (user_type === "admin") {
       window.location.href = "../../Dashboard/AdminDashboard";
     } else {
-      alert("نقش کاربر نامشخص است.");
+      showAlert("نقش کاربر نامشخص است.");
     }
   }
 
@@ -86,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const remember = document.getElementById("remember_me").checked;
 
     if (!idCode || !password) {
-      alert("لطفاً تمام فیلدها را پر کنید.");
+      showAlert("لطفاً تمام فیلدها را پر کنید.");
       return;
     }
 
@@ -105,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       await okHandler(response);
     } else {
       console.error("Login error:", error);
-      alert("خطا در ورود: " + error);
+      showAlert("خطا در ورود: " + error);
       submitBtn.disabled = false;
       submitBtn.innerText = "ورود";
     }
