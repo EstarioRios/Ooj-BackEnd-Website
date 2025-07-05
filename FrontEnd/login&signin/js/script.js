@@ -1,6 +1,82 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const loginForm = document.querySelector("form");
   const submitBtn = loginForm.querySelector("button[type='submit']");
+
+  async function okHandler(response) {
+    const result = await response.json();
+    const { user_type, tokens, user } = result;
+
+    console.log("user:", user);
+
+    if (tokens) {
+      localStorage.setItem("access_token", tokens.access);
+      localStorage.setItem("refresh_token", tokens.refresh_token);
+    }
+
+    if (user_type === "student") {
+      window.location.href = "../../Dashboard/StudentDashboard";
+    } else if (user_type === "teacher") {
+      window.location.href = "../../Dashboard/TeacherDashboard";
+    } else if (user_type === "admin") {
+      window.location.href = "../../Dashboard/AdminDashboard";
+    } else {
+      alert("نقش کاربر نامشخص است.");
+    }
+  }
+
+  async function tryLoginWithToken(token) {
+    try {
+      const response = await fetch("/api/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token.toString(),
+        },
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        return { error: result.error || "توکن نامعتبر است", response: null };
+      }
+
+      return { error: null, response };
+    } catch (err) {
+      return { error: err.message, response: null };
+    }
+  }
+
+  async function tryLoginManual(data) {
+    try {
+      const response = await fetch("/api/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        return { error: result.error || "ورود ناموفق", response: null };
+      }
+
+      return { error: null, response };
+    } catch (err) {
+      return { error: err.message, response: null };
+    }
+  }
+
+  const access_token = localStorage.getItem("access_token");
+
+  if (access_token) {
+    const { error, response } = await tryLoginWithToken(access_token);
+    if (response) {
+      await okHandler(response);
+      return;
+    }
+  }
+
+  loginForm.style.display = "block";
 
   loginForm.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -14,55 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    submitBtn.disabled = true;
+    submitBtn.innerText = "در حال ورود...";
+
     const data = {
       id_code: idCode,
       password: password,
       remember: remember,
     };
 
-    submitBtn.disabled = true;
-    submitBtn.innerText = "در حال ورود...";
+    const { error, response } = await tryLoginManual(data);
 
-    const access_token = localStorage.getItem("access_token");
-    try {
-      const response = await fetch("/api/login/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-
-        console.log("✅ ورود موفق:", result.success);
-        console.log("👤 نوع کاربر:", result.user_type);
-        console.log("🔐 توکن‌ها:", result.tokens);
-
-        if (remember) {
-          localStorage.setItem("access_token", result.tokens.access);
-          localStorage.setItem("refresh_token", result.tokens.refresh);
-        } else {
-          sessionStorage.setItem("access_token", result.tokens.access);
-          sessionStorage.setItem("refresh_token", result.tokens.refresh);
-        }
-
-        if (result.user_type === "student") {
-          window.location.href = "/FrontEnd/Dashboard/index.html";
-        } else if (result.user_type === "teacher") {
-          window.location.href = "/FrontEnd/Dashboard/index.html";
-        } else if (result.user_type === "admin") {
-          window.location.href = "/FrontEnd/Dashboard/index.html";
-        }
-      } else {
-        const error = await response.json();
-        alert("❌ خطا در ورود: " + (error.detail || "اطلاعات اشتباه است"));
-      }
-    } catch (err) {
-      console.error("⛔ خطا در ارسال درخواست:", err);
-      alert("ارتباط با سرور ممکن نیست. لطفاً بعداً تلاش کنید.");
-    } finally {
+    if (response) {
+      await okHandler(response);
+    } else {
+      console.error("Login error:", error);
+      alert("خطا در ورود: " + error);
       submitBtn.disabled = false;
       submitBtn.innerText = "ورود";
     }
