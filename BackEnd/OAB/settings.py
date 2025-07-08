@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-hh8u0z9x)%-awnxs_x&e73$j@6v&f94r*5cjudpmha&cy=62qm"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-AUTH_USER_MODEL = "AuthenticationSystem.CustomUser"  # بجای app_name نام اپ خودت
+AUTH_USER_MODEL = "AuthenticationSystem.CustomUser"
 
 
 REST_FRAMEWORK = {
@@ -61,9 +61,6 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=7),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
-    # "USER_ID_FIELD": "id",
-    # "USER_ID_CLAIM": "user_id",
-    # "USER_ID_FIELD": "id_code",
 }
 
 # CACHES = {
