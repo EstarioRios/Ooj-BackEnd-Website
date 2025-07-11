@@ -477,11 +477,16 @@ def show_student_profile(request):
 
     if user.user_type == "student":
         target_user = user
+    else:
+        return Response(
+            {"error": "'targer_user' is not student"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
 
     return Response(
         {
             "message": "successful",
-            "user_data": CustomUserDetailSerializer(user).data,
+            "user_data": CustomUserDetailSerializer(target_user).data,
         },
         status=status.HTTP_200_OK,
     )
@@ -521,6 +526,11 @@ def show_teacher_profile(request):
             )
     if user.user_type == "teacher":
         target_user = user
+    else:
+        return Response(
+            {"error": "'target_user' is not teacher"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
 
     return Response(
         {
