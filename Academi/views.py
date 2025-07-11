@@ -108,6 +108,8 @@ def edit_score(request):
     target_user_id_code = request.data.get("user_id_code")
     score_title = request.data.get("score_title")
     score_value = request.data.get("score_value")
+    score_new_title = request.data.get("score_new_title")
+    score_new_value = request.data.get("score_new_value")
 
     if not all(
         [
@@ -151,8 +153,8 @@ def edit_score(request):
     except Score.DoesNotExist:
         return Response({"error": "Score not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    target_score.value = score_value
-    target_score.title = score_title
+    target_score.value = score_new_value
+    target_score.title = score_new_title
     target_score.save()
     return Response(
         {

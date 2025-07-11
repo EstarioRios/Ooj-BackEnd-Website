@@ -20,7 +20,7 @@ urlpatterns = [
     path("score/submit/", sub_score, name="submit_score"),
     # PATCH /api/score/edit/
     # Only teachers
-    # Body: { "user_id_code": int, "score_title": str, "score_value": float }
+    # Body: { "user_id_code": int, "score_title": str, "score_value": float , "score_new_title": str, "score_new_value": float}
     path("score/edit/", edit_score, name="edit_score"),
     # GET /api/student/scores/?student_id_code=123
     # Students can view their own scores
