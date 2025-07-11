@@ -1,0 +1,146 @@
+/* فایل fonts.css */
+
+/* Vazir Regular */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Regular.woff2') format('woff2'),
+         url('font/Vazir-Regular.woff') format('woff'),
+         url('font/Vazir-Regular.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Light */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Light.woff2') format('woff2'),
+         url('font/Vazir-Light.woff') format('woff'),
+         url('font/Vazir-Light.eot') format('eot');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Medium */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Medium.woff2') format('woff2'),
+         url('font/Vazir-Medium.woff') format('woff'),
+         url('font/Vazir-Medium.eot') format('eot');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Bold */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Bold.woff2') format('woff2'),
+         url('font/Vazir-Bold.woff') format('woff'),
+         url('font/Vazir-Bold.eot') format('eot');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Black */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Black.woff2') format('woff2'),
+         url('font/Vazir-Black.woff') format('woff'),
+         url('font/Vazir-Black.eot') format('eot');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Thin */
+@font-face {
+    font-family: 'Vazir';
+    src: url('font/Vazir-Thin.woff2') format('woff2'),
+         url('font/Vazir-Thin.woff') format('woff'),
+         url('font/Vazir-Thin.eot') format('eot');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vazir Variable (اگر میخوای از Variable استفاده کنی) */
+@font-face {
+    font-family: 'Vazir Variable';
+    src: url('font/Vazir-Variable.woff2') format('woff2-variations'),
+         url('font/Vazir-Variable.woff') format('woff-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* اعمال فونت به کل صفحه */
+* {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+html, body {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* کلاس‌های کمکی برای وزن‌های مختلف */
+.font-thin { font-weight: 100; }
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 700; }
+.font-black { font-weight: 900; }
+
+/* سایز‌های مختلف فونت */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+
+/* بهبود نمایش متن فارسی */
+body {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* استایل‌های خاص برای عناصر مختلف */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+    font-weight: 700;
+}
+
+button, input, textarea, select {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* برای فرم‌ها */
+.form-control, .form-select {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+    direction: rtl;
+}
+
+/* برای جداول */
+table {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* برای کارت‌ها */
+.card {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* برای navigation */
+.nav, .navbar {
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
