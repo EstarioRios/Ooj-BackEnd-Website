@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import login, signup
+from Academi.views import enCode_accessToken
 
 urlpatterns = [
     # POST /api/login/
@@ -8,7 +9,7 @@ urlpatterns = [
     # {
     #   "id_code": 123456,
     #   "password": "your_password",
-    #   "remember":"True ro False" 
+    #   "remember":"True ro False"
     # }
     # Response (200 OK):
     # {
@@ -47,4 +48,7 @@ urlpatterns = [
     #   "user": { ... }  # serialized user data
     # }
     path("signup/", signup, name="signup"),
+    # GET /api/login/access-token/
+    # Everyone
+    path("login/access-token/", enCode_accessToken, name="encode_access_token"),
 ]

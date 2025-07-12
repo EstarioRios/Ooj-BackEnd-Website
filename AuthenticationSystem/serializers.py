@@ -23,6 +23,13 @@ class CustomUserListSerializer(serializers.ModelSerializer):
         ]
 
 
+# ---------- READ-ONLY USERTYPE ----------
+class CustomUserUserTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ["user_type", "active_mode"]
+
+
 # ---------- FULL USER DETAIL (nested) ----------
 class CustomUserDetailSerializer(serializers.ModelSerializer):
     scores = ScoreSerializer(many=True, read_only=True)

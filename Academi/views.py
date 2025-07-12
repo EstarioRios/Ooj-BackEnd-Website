@@ -8,6 +8,7 @@ from AuthenticationSystem.serializers import (
     EdClassSerializer,
     StudentCreateSerializer,
     TeacherCreateSerializer,
+    CustomUserUserTypeSerializer,
     CustomUserListSerializer,
     CustomUserDetailSerializer,
     CusomUserDetailSerializerTeacher,
@@ -589,5 +590,24 @@ def change_student_class(request):
     target_student.save()
     return Response(
         {"message": "successful"},
+        status=status.HTTP_200_OK,
+    )
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def enCode_accessToken(request):
+
+    user_auth = JWTAuthentication().authenticate(request)
+    if not user_auth:
+        return Response(
+            {"error": "your JWT is not fine"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    user, _ = user_auth
+    targetUser_userType = CustomUserUserTypeSerializer(user).data
+
+    return Response(
+        {"user_userType": targetUser_userType},
         status=status.HTTP_200_OK,
     )
