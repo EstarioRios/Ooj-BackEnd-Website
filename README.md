@@ -99,17 +99,54 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 
 ## 📡 API Overview
 
-### 🔑 Authentication
+```
+☑️ POST /api/login/
+     Description: Login using JWT token (if already exists) or with id_code and password.
+     Request body (if JWT not used):
+     {
+       "id_code": 123456,
+       "password": "your_password",
+       "remember":"True ro False"
+     }
+     Response (200 OK):
+     {
+       "user_type": "student",
+       "success": "Login successful",
+       "tokens": { "access": "...", "refresh": "..." },
+       "user": { ... }  # serialized user data
+     }
 
-- `POST /api/register/student/`
-- `POST /api/register/teacher/`
-- `POST /api/login/`
-- `GET /api/logout/`
+☑️ POST /api/signup/
+     Description: Create a new user (admin-only access via JWT)
+     Headers:
+       Authorization: Bearer <admin_access_token>
+     Request body (for teacher):
+     {
+       "user_type": "teacher",
+       "id_code": 123456,
+       "password": "your_password",
+       "first_name": "Ali",
+       "last_name": "Ahmadi"
+     }
+     Request body (for student):
+     {
+       "user_type": "student",
+       "id_code": 654321,
+       "password": "your_password",
+       "first_name": "Sara",
+       "last_name": "Hosseini",
+       "student_class": "Grade 8-A"
+     }
+     Response (201 Created or 200 OK):
+     {
+       "user_type": "student",
+       "success": "User created successfully",
+       "tokens": { "access": "...", "refresh": "..." },
+       "user": { ... }  # serialized user data
+     }
 
-### 📝 Score
 
-- `POST /api/score/submit/` – Submit score (teacher only)
-
+```
 ---
 
 ## 🧪 Running Tests
