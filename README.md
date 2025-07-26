@@ -99,6 +99,7 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 
 ## 📡 API Overview
 
+### 🔐 AuthenticationSystem
 ```
 ☑️ POST /api/login/
      Description: Login using JWT token (if already exists) or with id_code and password.
@@ -146,6 +147,49 @@ ALLOWED_HOSTS=localhost,127.0.0.1
      }
 
 
+```
+### 🎓Academi
+```
+☑️ POST /api/score/submit/
+     Only teachers
+     Body: { "user_id_code": int, "score_title": str, "score_value": float }
+
+☑️ PATCH /api/score/edit/
+     Only teachers
+     Body: { "user_id_code": int, "score_title": str, "score_value": float , "score_new_title": str, "score_new_value": float}
+
+☑️ GET /api/student/scores/?student_id_code=123
+     Students can view their own scores
+     Teachers/admins must pass ?student_id_code
+
+☑️ GET /api/class/students/?ed_class_title=Grade 8-A
+     Teachers/admins only
+
+☑️ DELETE /api/student/remove/?target_user_id_code=123
+     Admin only
+
+☑️ PATCH /api/class/change-teacher/
+     Admin only
+     Body: { "ed_class_title": str, "new_teacher_id_code": int }
+
+☑️ GET /api/teachers/
+     Admin only
+
+☑️ GET /api/student/profile/?id_code=123
+     Students: see their own profile
+     Admin/teacher: pass ?id_code
+
+☑️ GET /api/teacher/profile/?target_user_id_code=123
+     Teachers: see their own profile
+     Admins: must pass ?target_user_id_code
+
+☑️ DELETE /api/teacher/remove/
+     Admin only
+     Body: {"teacher_id_code":str("techer_id_code")}
+
+☑️ PATCH /api/student/change-class/
+     Admin only
+     Body: { "target_student_id_code": int, "new_class_title": str }
 ```
 ---
 
